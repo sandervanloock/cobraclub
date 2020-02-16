@@ -1,14 +1,24 @@
-* {
-    padding:0;
-    margin:0;
-    outline:0;
+.cover {
+    text-align: center;
 }
+
+.image {
+    max-width: 50%;
+}
+
+/*end of sander styling*/
+* {
+    padding: 0;
+    margin: 0;
+    outline: 0;
+}
+
 .cl {
-    font-size:0;
-    line-height:0;
-    height:0;
-    display:block;
-    clear:both;
+    font-size: 0;
+    line-height: 0;
+    height: 0;
+    display: block;
+    clear: both;
 }
 body{
     background:#383933 url(images/bg.jpg) repeat-y center 0;
@@ -85,8 +95,6 @@ h2{font-size: 16px; color:#000; line-height: 33px; border-bottom:solid 1px #000;
 .box ul{list-style-type: none;}
 .box li h4 a{ color:#fff; text-decoration: none;}
 .box li h4 a:hover{ color:#efd125; }
-.box li a.image{float: left;}
-.box li a.image img{display: block; border:solid 1px #eed025; padding:1px}
 .box li .info{float: left; display: inline; }
 
 #main{float: right; display: inline; width:903px}
