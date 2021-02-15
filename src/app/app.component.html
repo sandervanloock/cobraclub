@@ -10,11 +10,11 @@
     <!-- Navigation -->
     <div id="nav">
       <ul>
-        <li><a [routerLinkActiveOptions]="{ exact: true }" routerLink="" routerLinkActive="active">Home</a></li>
-        <li><a [routerLinkActiveOptions]="{ exact: true }" routerLink="club" routerLinkActive="active">Club</a></li>
-        <li><a [routerLinkActiveOptions]="{ exact: true }" routerLink="statuten" routerLinkActive="active">Statuten</a></li>
-        <li><a [routerLinkActiveOptions]="{ exact: true }" routerLink="lid" routerLinkActive="active">Lid worden</a></li>
-        <li><a routerLink="" >Kalender</a></li>
+        <li><a href="/" [routerLinkActiveOptions]="{ exact: true }"routerLink="" routerLinkActive="active">Home</a></li>
+        <li><a href="/club" [routerLinkActiveOptions]="{ exact: true }" routerLink="club" routerLinkActive="active">Club</a></li>
+        <li><a href="/statuten" [routerLinkActiveOptions]="{ exact: true }" routerLink="statuten" routerLinkActive="active">Statuten</a></li>
+        <li><a href="/lid" [routerLinkActiveOptions]="{ exact: true }" routerLink="lid" routerLinkActive="active">Lid worden</a></li>
+        <li><a href="/ "routerLink="" >Kalender</a></li>
         <li><a href="http://forum.cobraclub.nl/index.php" target="_blank">Forum</a></li>
       </ul>
     </div>
