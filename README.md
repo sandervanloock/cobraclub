@@ -17,6 +17,8 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## deploy
 aws s3 cp dist/ s3://www.cobraclub.be --profile cobraclub --recursive
 
+or you can run the `deploy.sh` script
+
 ## new photos
 use https://bulkresizephotos.com/nl to resize. 
 I resized the given images with 50%
