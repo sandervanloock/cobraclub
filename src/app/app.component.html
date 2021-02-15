@@ -1,0 +1,57 @@
+<div class="shell">
+
+  <!-- Header -->
+  <div id="header">
+
+    <!-- Logo -->
+    <h1 id="logo"><a href="/">Cobra Club Belgium</a></h1>
+    <!-- End Logo -->
+
+    <!-- Navigation -->
+    <div id="nav">
+      <ul>
+        <li><a [routerLinkActiveOptions]="{ exact: true }" routerLink="" routerLinkActive="active">Home</a></li>
+        <li><a [routerLinkActiveOptions]="{ exact: true }" routerLink="club" routerLinkActive="active">Club</a></li>
+        <li><a [routerLinkActiveOptions]="{ exact: true }" routerLink="statuten" routerLinkActive="active">Statuten</a></li>
+        <li><a [routerLinkActiveOptions]="{ exact: true }" routerLink="lid" routerLinkActive="active">Lid worden</a></li>
+        <li><a routerLink="" >Kalender</a></li>
+        <li><a href="http://forum.cobraclub.nl/index.php" target="_blank">Forum</a></li>
+      </ul>
+    </div>
+    <!-- End Navigation -->
+  </div>
+  <!-- End Header -->
+
+  <!-- Content -->
+  <div id="content container">
+
+    <!-- Main -->
+    <div id="main">
+      <!-- Top Image -->
+      <div class="row cover m-2">
+
+        <div class="image img-fluid mx-auto">
+          <img width="100%" alt="cover" src="/assets/images/cover.jpg">
+        </div>
+
+      </div>
+
+      <!-- End Top Image -->
+
+      <router-outlet></router-outlet>
+
+      <!-- End Box -->
+    </div>
+
+    <!-- End Main -->
+    <div class="cl">&nbsp;</div>
+
+  </div>
+  <!-- End Content -->
+
+</div>
+
+<div align=center>Cobra deserves to be driven</div>
+
+
+
