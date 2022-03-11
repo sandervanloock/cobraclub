@@ -13,52 +13,52 @@ export class HomepageComponent implements OnInit {
   constructor() {
     this.images = [
       {
-        month: 'januari',
-        src: '/assets/images/2021/januari.jpg'
-      },
-      {
         month: 'februari',
-        src: '/assets/images/2021/februari.jpg'
+        src: '/assets/images/2022/februari.jpeg'
       },
       {
         month: 'maart',
-        src: '/assets/images/2021/maart.jpg'
+        src: '/assets/images/2022/maart.jpeg'
       },
       {
         month: 'april',
-        src: '/assets/images/2021/april.jpg'
+        src: '/assets/images/2022/april.jpeg'
       },
       {
         month: 'mei',
-        src: '/assets/images/2021/mei.jpg'
+        src: '/assets/images/2022/mei.jpg'
       },
       {
         month: 'juni',
-        src: '/assets/images/2021/juni.jpg'
+        src: '/assets/images/2022/juni.jpeg'
       },
       {
         month: 'juli',
-        src: '/assets/images/2021/juli.jpg'
+        src: '/assets/images/2022/juli.jpeg'
       },
       {
         month: 'augustus',
-        src: '/assets/images/2021/augustus.jpg'
+        src: '/assets/images/2022/augustus.jpeg'
       },
       {
         month: 'september',
-        src: '/assets/images/2021/september.jpg'
+        src: '/assets/images/2022/september.jpg'
       },
       {
         month: 'oktober',
-        src: '/assets/images/2021/oktober.jpg'
+        src: '/assets/images/2022/oktober.JPG'
       },
       {
         month: 'november',
-        src: '/assets/images/2021/november.jpg'
+        src: '/assets/images/2022/november.jpeg'
       },
       {
         month: 'december',
-        src: '/assets/images/2021/december.jpg'
+        src: '/assets/images/2022/december.jpeg'
+      },
+       {
+              month: 'januari',
+              src: '/assets/images/2022/januari-2023.jpg'
       }
     ]
 
