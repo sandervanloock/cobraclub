@@ -14,55 +14,55 @@ export class HomepageComponent implements OnInit {
     this.images = [
       {
         month: 'januari',
-        src: '/assets/images/2023/1 CCB_kalender2023 front.jpg'
+        src: '/assets/images/2024/1 FRONT.jpg'
       },
       {
         month: 'februari',
-        src: '/assets/images/2023/2 feb.jpg'
+        src: '/assets/images/2024/2 FEBRUARI.jpg'
       },
       {
         month: 'maart',
-        src: '/assets/images/2023/3 ma (2).jpg'
+        src: '/assets/images/2024/3 MAART.jpg'
       },
       {
         month: 'april',
-        src: '/assets/images/2023/4 april.jpg'
+        src: '/assets/images/2024/4 APRIL.jpg'
       },
       {
         month: 'mei',
-        src: '/assets/images/2023/5 mei.jpg'
+        src: '/assets/images/2024/5 MEI.jpg'
       },
       {
         month: 'juni',
-        src: '/assets/images/2023/6 juni.jpg'
+        src: '/assets/images/2024/6 JUNI.jpg'
       },
       {
         month: 'juli',
-        src: '/assets/images/2023/7 jul.jpg'
+        src: '/assets/images/2024/7 JULI.jpg'
       },
       {
         month: 'augustus',
-        src: '/assets/images/2023/8 aug.jpg'
+        src: '/assets/images/2024/8 AUGUSTUS.jpg'
       },
       {
         month: 'september',
-        src: '/assets/images/2023/9 september (2).jpg'
+        src: '/assets/images/2024/9 SEPTEMBER.jpg'
       },
       {
         month: 'oktober',
-        src: '/assets/images/2023/10 oct.jpg'
+        src: '/assets/images/2024/10 OCTOBER.jpg'
       },
       {
         month: 'november',
-        src: '/assets/images/2023/11 nov (3).jpg'
+        src: '/assets/images/2024/11 NOVEMBER.jpg'
       },
       {
         month: 'december',
-        src: '/assets/images/2023/12 dec.jpg'
+        src: '/assets/images/2024/12 DECEMBER.jpg'
       },
        {
           month: 'januari',
-          src: '/assets/images/2023/13 feb 2024.jpg'
+          src: '/assets/images/2024/13 JANUARI 2025.jpg'
       }
     ]
 
