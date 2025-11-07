@@ -1,0 +1,79 @@
+name: Release and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for proper versioning
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Angular app
+        run: ng build --configuration production
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-west-1  # Change this to your preferred region
+
+      - name: Deploy to S3
+        run: |
+          aws s3 sync dist/ s3://www.cobraclub.be --delete
+          echo "✅ Deployment to S3 completed successfully"
+
+      - name: Get current version
+        id: get_version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Current version: $VERSION"
+
+      - name: Generate version tag
+        id: version_tag
+        run: |
+          VERSION=${{ steps.get_version.outputs.version }}
+          TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+          TAG="v${VERSION}-${TIMESTAMP}"
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+          echo "Generated tag: $TAG"
+
+      - name: Create GitHub Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.version_tag.outputs.tag }}
+          release_name: Release ${{ steps.version_tag.outputs.tag }}
+          body: |
+            ## Deployed to Production
+
+            This release has been automatically deployed to S3 bucket: `www.cobraclub.be`
+
+            **Build artifacts:**
+            - Angular app built with production configuration
+            - Deployed from commit: ${{ github.sha }}
+
+            **Deployment time:** ${{ github.event.head_commit.timestamp }}
+          draft: false
+          prerelease: false
