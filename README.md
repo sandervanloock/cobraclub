@@ -23,7 +23,7 @@ or you can run the `deploy.sh` script
 
 ### Automated Deployment (GitHub Actions)
 
-The repository includes a GitHub Actions workflow that automatically builds and deploys the application to S3 when changes are merged to the `main` branch.
+The repository includes a GitHub Actions workflow that automatically builds and deploys the application to S3 when changes are merged to the `master` branch.
 
 #### Setting up AWS Credentials for GitHub Actions
 
@@ -75,7 +75,7 @@ To enable automated deployments, you need to create AWS credentials and add them
 **5. Update AWS Region (if needed):**
    - Edit `.github/workflows/release.yml` and change the `aws-region` value if your S3 bucket is in a different region than `eu-west-1`
 
-Once configured, every merge to `main` will trigger an automatic build, deployment, and GitHub release.
+Once configured, every merge to `master` will trigger an automatic build, deployment, and GitHub release.
 
 ## new photos
 use https://bulkresizephotos.com/nl to resize. 
