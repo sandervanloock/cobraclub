@@ -69,18 +69,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-cobraclub:build"
+            "buildTarget": "ng-cobraclub:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-cobraclub:build:production"
+              "buildTarget": "ng-cobraclub:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-cobraclub:build"
+            "buildTarget": "ng-cobraclub:build"
           }
         },
         "test": {
