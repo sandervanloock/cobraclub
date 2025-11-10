@@ -1,12 +1,19 @@
 <li class="row media" *ngIf="image">
   <div class="column">
-    <img
-      [alt]="image.alt || 'Cobra Club Belgium kalender - ' + image.month"
-      class="row image img-fluid"
-      [src]="image.src"
-      loading="lazy"/>
+    <picture>
+      <source [srcset]="getWebPSrc(image.src)" type="image/webp">
+      <img
+        [alt]="image.alt || 'Cobra Club Belgium kalender - ' + image.month"
+        class="row image img-fluid"
+        [src]="image.src"
+        [attr.loading]="isLCP ? null : 'lazy'"
+        [attr.fetchpriority]="isLCP ? 'high' : null"
+        width="1224"
+        height="1632"
+        style="width: 100%; height: auto;"/>
+    </picture>
     <div class="row" style="color:white">
-      <h4>{{ image.month }}</h4>
+      <h3>{{ image.month }}</h3>
     </div>
   </div>
 </li>

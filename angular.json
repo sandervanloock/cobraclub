@@ -35,7 +35,8 @@
               "src/manifest.json",
               "src/assets",
               "src/robots.txt",
-              "src/sitemap.xml"
+              "src/sitemap.xml",
+              "src/.htaccess"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -106,7 +107,8 @@
               "src/manifest.json",
               "src/assets",
               "src/robots.txt",
-              "src/sitemap.xml"
+              "src/sitemap.xml",
+              "src/.htaccess"
             ],
             "styles": [
               "src/styles.css"
