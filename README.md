@@ -77,12 +77,120 @@ To enable automated deployments, you need to create AWS credentials and add them
 
 Once configured, every merge to `master` will trigger an automatic build, deployment, and GitHub release.
 
-## new photos
-use https://bulkresizephotos.com/nl to resize. 
-I resized the given images with 50%
+## Adding New Photos
 
-Add a new folder in assets/images
-Add the new images in this folder and update homepage.component.ts
+### Automated Image Optimization Workflow
+
+The project includes an automated image optimization script that converts images to WebP format for better performance. Follow these steps when adding new images:
+
+#### 1. Add Your Images
+
+Add new images to the appropriate folder in `src/assets/images/`:
+```bash
+# Example: Adding 2025 calendar images
+mkdir -p src/assets/images/2025
+# Copy your JPEG/PNG images to this folder
+```
+
+#### 2. Run the Image Conversion Script
+
+The script will automatically convert all JPEG and PNG images to WebP format:
+
+```bash
+node scripts/convert-images-to-webp.js
+```
+
+**What the script does:**
+- Scans all subdirectories in `src/assets/images/`
+- Converts `.jpg`, `.jpeg`, and `.png` files to `.webp` format
+- Optimizes images with 85% quality (good balance between size and quality)
+- Skips images that already have WebP versions
+- Shows file size savings for each conversion
+
+**Example output:**
+```
+🖼️  Starting image conversion to WebP...
+Found 5 images to convert
+
+✅ Converted januari.jpg
+   Original: 284.0KB → WebP: 277.1KB (2.5% smaller)
+✅ Converted februari.jpg
+   Original: 191.5KB → WebP: 154.7KB (19.2% smaller)
+...
+✨ Image conversion complete!
+```
+
+#### 3. Update Component Data (if adding calendar images)
+
+If you're adding new calendar images, update `src/app/homepage/homepage.component.ts`:
+
+```typescript
+this.images = [
+  {
+    month: 'januari',
+    src: '/assets/images/2025/1-JANUARI.jpg'  // Keep .jpg extension
+  },
+  // Add more months...
+]
+```
+
+**Note:** Keep the `.jpg` extension in the code. The template automatically loads the WebP version with JPEG fallback using the `<picture>` element.
+
+#### 4. Test Your Changes
+
+Build and test the application:
+```bash
+npm run build
+ng serve
+```
+
+### Image Performance Best Practices
+
+The application uses several performance optimizations:
+
+1. **WebP Format with Fallback**
+   - WebP images load for modern browsers (60-80% smaller)
+   - JPEG/PNG fallback for older browsers
+   - Automatic via `<picture>` element in templates
+
+2. **Lazy Loading**
+   - First image (LCP) loads immediately with `fetchpriority="high"`
+   - All other images lazy load with `loading="lazy"`
+
+3. **Explicit Dimensions**
+   - All images have `width` and `height` attributes
+   - Prevents layout shift (CLS) during page load
+
+4. **Recommended Image Sizes**
+   - Cover image: Max 3000px width
+   - Calendar images: Max 1224px width
+   - Keep original aspect ratio
+
+### Manual Resize (Optional)
+
+If images are extremely large (>5MB), consider resizing before conversion:
+- Use [Bulk Resize Photos](https://bulkresizephotos.com/nl)
+- Resize to 50-75% of original size
+- Then run the WebP conversion script
+
+### Troubleshooting
+
+**Script not found?**
+```bash
+# Make sure you're in the project root directory
+cd /path/to/cobraclub
+node scripts/convert-images-to-webp.js
+```
+
+**Permission denied?**
+```bash
+chmod +x scripts/convert-images-to-webp.js
+```
+
+**Sharp installation failed?**
+```bash
+npm install --save-dev sharp
+```
 
 
 ## Further help
