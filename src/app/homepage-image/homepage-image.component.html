@@ -1,9 +1,12 @@
 <li class="row media" *ngIf="image">
   <div class="column">
     <img
-      [alt]="image.month" class="row image img-fluid" [src]="image.src"/>
+      [alt]="image.alt || 'Cobra Club Belgium kalender - ' + image.month"
+      class="row image img-fluid"
+      [src]="image.src"
+      loading="lazy"/>
     <div class="row" style="color:white">
-      <h4></h4>
+      <h4>{{ image.month }}</h4>
     </div>
   </div>
 </li>

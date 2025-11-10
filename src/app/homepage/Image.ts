@@ -1,4 +1,5 @@
 export interface Image {
     month: string,
-    src: string
+    src: string,
+    alt?: string
 }

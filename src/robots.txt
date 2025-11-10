@@ -1,0 +1,6 @@
+# robots.txt for Cobra Club Belgium
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.cobraclub.be/sitemap.xml
