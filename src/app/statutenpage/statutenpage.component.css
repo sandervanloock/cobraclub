@@ -5,4 +5,10 @@
 .box li h4 a:hover{ color:#efd125; }
 .box li .info{float: left; display: inline; }
 
-.box h2{width:903px; background:#eed025 url('/assets/images/h2-long.gif') no-repeat right 0; margin-bottom:15px}
+.box h2{
+  max-width:903px;
+  width: 100%;
+  background:#eed025 url('/assets/images/h2-long.gif') no-repeat right 0;
+  margin-bottom:15px;
+  box-sizing: border-box;
+}
