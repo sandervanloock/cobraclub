@@ -172,6 +172,12 @@ h2{
   color: #fff;
   text-decoration: none;
   transition: color 0.3s ease;
+  padding: 12px 8px;
+  min-height: 48px;
+  min-width: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 #nav li a:hover,
 #nav li a.active{
@@ -380,9 +386,15 @@ h2{
   }
 
   #nav li {
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
     font-size: 12px;
+  }
+
+  #nav li a {
+    padding: 12px 6px;
+    min-height: 48px;
+    min-width: 48px;
   }
 
   #sidebar .box li .info {
