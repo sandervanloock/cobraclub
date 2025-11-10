@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+  <!-- Apple Touch Icon - Cobra Club Belgium -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2C2C2C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1A1A1A;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="carGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background with rounded corners for iOS -->
+  <rect width="180" height="180" rx="40" fill="url(#bgGradient)"/>
+
+  <!-- Classic sports car silhouette (larger, centered) -->
+  <g transform="translate(90, 90) scale(1.8)">
+    <!-- Car body -->
+    <path d="M -40 5 Q -38 -10 -20 -15 L -5 -18 Q 0 -20 5 -20 Q 10 -20 15 -18 L 30 -15 Q 38 -10 40 5 L 42 12 Q 42 18 38 18 L -38 18 Q -42 18 -42 12 Z" fill="url(#carGradient)"/>
+
+    <!-- Windshield -->
+    <path d="M -5 -18 L 0 -25 L 10 -25 L 15 -18" fill="#3C3C3C"/>
+
+    <!-- Front wheel -->
+    <circle cx="-28" cy="18" r="10" fill="#2C2C2C" stroke="#FFD700" stroke-width="2"/>
+    <circle cx="-28" cy="18" r="5" fill="#FFD700"/>
+
+    <!-- Rear wheel -->
+    <circle cx="28" cy="18" r="10" fill="#2C2C2C" stroke="#FFD700" stroke-width="2"/>
+    <circle cx="28" cy="18" r="5" fill="#FFD700"/>
+
+    <!-- Front detail -->
+    <ellipse cx="-37" cy="5" rx="4" ry="6" fill="#C41E3A"/>
+
+    <!-- Racing stripe -->
+    <rect x="-2" y="-18" width="4" height="25" fill="#C41E3A" opacity="0.8"/>
+  </g>
+
+  <!-- Club initials at bottom -->
+  <text x="90" y="155" font-family="Montserrat, Arial, sans-serif" font-size="24" font-weight="700" fill="#FFD700" text-anchor="middle">CCB</text>
+</svg>

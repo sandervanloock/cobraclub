@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- Optimized 32x32 Favicon for Browser Tab -->
+  <rect width="32" height="32" fill="#1A1A1A"/>
+
+  <!-- Simplified car for small size -->
+  <g fill="#FFD700">
+    <!-- Car body - simplified -->
+    <path d="M 6 18 Q 7 14 9 13 L 12 12 Q 16 11 20 12 L 23 13 Q 25 14 26 18 L 26 21 Q 26 22 24 22 L 8 22 Q 6 22 6 21 Z"/>
+
+    <!-- Windshield -->
+    <path d="M 12 12 L 13.5 9 L 18.5 9 L 20 12" fill="#2C2C2C"/>
+
+    <!-- Front wheel -->
+    <circle cx="10" cy="22" r="3" fill="#2C2C2C" stroke="#FFD700" stroke-width="0.5"/>
+    <circle cx="10" cy="22" r="1.5" fill="#FFD700"/>
+
+    <!-- Rear wheel -->
+    <circle cx="22" cy="22" r="3" fill="#2C2C2C" stroke="#FFD700" stroke-width="0.5"/>
+    <circle cx="22" cy="22" r="1.5" fill="#FFD700"/>
+
+    <!-- Red accent -->
+    <ellipse cx="7.5" cy="18" rx="1" ry="1.5" fill="#C41E3A"/>
+    <rect x="15" y="12" width="2" height="6" fill="#C41E3A" opacity="0.8"/>
+  </g>
+</svg>

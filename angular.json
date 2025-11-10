@@ -28,7 +28,14 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/favicon.svg",
+              "src/favicon-16x16.svg",
+              "src/favicon-32x32.svg",
+              "src/apple-touch-icon.svg",
+              "src/manifest.json",
+              "src/assets",
+              "src/robots.txt",
+              "src/sitemap.xml"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -92,7 +99,14 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/favicon.svg",
+              "src/favicon-16x16.svg",
+              "src/favicon-32x32.svg",
+              "src/apple-touch-icon.svg",
+              "src/manifest.json",
+              "src/assets",
+              "src/robots.txt",
+              "src/sitemap.xml"
             ],
             "styles": [
               "src/styles.css"
