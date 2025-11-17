@@ -15,55 +15,55 @@ export class HomepageComponent implements OnInit {
     this.images = [
       {
         month: 'januari',
-        src: '/assets/images/2024/1 FRONT.jpg'
+        src: '/assets/images/2025/1.jpg'
       },
       {
         month: 'februari',
-        src: '/assets/images/2024/2 FEBRUARI.jpg'
+        src: '/assets/images/2025/2.jpg'
       },
       {
         month: 'maart',
-        src: '/assets/images/2024/3 MAART.jpg'
+        src: '/assets/images/2025/3.jpg'
       },
       {
         month: 'april',
-        src: '/assets/images/2024/4 APRIL.jpg'
+        src: '/assets/images/2025/4.jpg'
       },
       {
         month: 'mei',
-        src: '/assets/images/2024/5 MEI.jpg'
+        src: '/assets/images/2025/5.jpg'
       },
       {
         month: 'juni',
-        src: '/assets/images/2024/6 JUNI.jpg'
+        src: '/assets/images/2025/6.jpg'
       },
       {
         month: 'juli',
-        src: '/assets/images/2024/7 JULI.jpg'
+        src: '/assets/images/2025/7.jpg'
       },
       {
         month: 'augustus',
-        src: '/assets/images/2024/8 AUGUSTUS.jpg'
+        src: '/assets/images/2025/8.jpg'
       },
       {
         month: 'september',
-        src: '/assets/images/2024/9 SEPTEMBER.jpg'
+        src: '/assets/images/2025/9.jpg'
       },
       {
         month: 'oktober',
-        src: '/assets/images/2024/10 OCTOBER.jpg'
+        src: '/assets/images/2025/10.jpg'
       },
       {
         month: 'november',
-        src: '/assets/images/2024/11 NOVEMBER.jpg'
+        src: '/assets/images/2025/11.jpg'
       },
       {
         month: 'december',
-        src: '/assets/images/2024/12 DECEMBER.jpg'
+        src: '/assets/images/2025/12.jpg'
       },
        {
           month: 'januari',
-          src: '/assets/images/2024/13 JANUARI 2025.jpg'
+         src: '/assets/images/2025/13.jpg'
       }
     ]
 
