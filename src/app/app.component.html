@@ -21,11 +21,11 @@
 
     <nav [class.nav-open]="menuOpen" aria-label="Main navigation" class="site-nav">
       <ul>
-        <li><a (click)="scrollToSection('hero'); closeMenu()">Home</a></li>
-        <li><a (click)="scrollToSection('calendar'); closeMenu()">Kalender</a></li>
-        <li><a (click)="scrollToSection('about'); closeMenu()">Club</a></li>
+        <li><a (click)="scrollToSection('hero', $event); closeMenu()" href="/#hero">Home</a></li>
+        <li><a (click)="scrollToSection('calendar', $event); closeMenu()" href="/#calendar">Kalender</a></li>
+        <li><a (click)="scrollToSection('about', $event); closeMenu()" href="/#about">Club</a></li>
         <li><a (click)="closeMenu()" href="/statuten" routerLink="statuten">Statuten</a></li>
-        <li><a (click)="scrollToSection('membership'); closeMenu()">Lid worden</a></li>
+        <li><a (click)="scrollToSection('membership', $event); closeMenu()" href="/#membership">Lid worden</a></li>
         <li><a (click)="closeMenu()" href="http://forum.cobraclub.nl/index.php" rel="noopener noreferrer"
                target="_blank">Forum</a></li>
       </ul>

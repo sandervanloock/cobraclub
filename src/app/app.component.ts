@@ -43,7 +43,12 @@ export class AppComponent implements OnInit {
     this.menuOpen = false;
   }
 
-  scrollToSection(sectionId: string): void {
+  scrollToSection(sectionId: string, event?: Event): void {
+    // Prevent default anchor navigation
+    if (event) {
+      event.preventDefault();
+    }
+
     // If not on homepage, navigate there first
     if (this.router.url !== '/') {
       this.router.navigate(['/']).then(() => {
