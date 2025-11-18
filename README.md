@@ -92,15 +92,45 @@ mkdir -p src/assets/images/2025
 # Copy your JPEG/PNG images to this folder
 ```
 
-#### 2. Run the Image Conversion Script
+#### 2. Run the Image Optimization Scripts
 
-The script will automatically convert all JPEG and PNG images to WebP format:
+**IMPORTANT:** Run BOTH scripts in order for full optimization:
 
 ```bash
+# Step 1: Generate tiny placeholder images (blur-up effect)
+npm run generate:placeholders
+
+# Step 2: Convert images to WebP format
 node scripts/convert-images-to-webp.js
+
+# Or run both at once:
+npm run optimize:images
 ```
 
-**What the script does:**
+##### Generate Placeholders Script
+
+**What it does:**
+
+- Creates tiny (~400 bytes) blurred versions of each image
+- Saves to `src/assets/images/2025/placeholders/` and `src/assets/images/cover-placeholder.jpg`
+- Used for instant page load (progressive image loading)
+- Prevents blank space while full images load
+
+**Example output:**
+
+```
+Generating tiny placeholder images...
+
+✓ Generated cover placeholder (600 bytes)
+✓ Generated 1.jpg placeholder (0KB → 486 bytes)
+✓ Generated 2.jpg placeholder (0KB → 408 bytes)
+...
+✅ All placeholders generated!
+```
+
+##### WebP Conversion Script
+
+**What it does:**
 - Scans all subdirectories in `src/assets/images/`
 - Converts `.jpg`, `.jpeg`, and `.png` files to `.webp` format
 - Optimizes images with 85% quality (good balance between size and quality)
@@ -148,20 +178,27 @@ ng serve
 
 The application uses several performance optimizations:
 
-1. **WebP Format with Fallback**
+1. **Progressive Image Loading (Blur-Up Technique)**
+  - Tiny placeholder images (~400 bytes) load instantly
+  - Creates smooth blur-to-sharp transition effect
+  - Dramatically improves perceived performance
+  - Users see blurred content in <100ms instead of blank space
+
+2. **WebP Format with Fallback**
    - WebP images load for modern browsers (60-80% smaller)
    - JPEG/PNG fallback for older browsers
    - Automatic via `<picture>` element in templates
 
-2. **Lazy Loading**
+3. **Lazy Loading**
    - First image (LCP) loads immediately with `fetchpriority="high"`
    - All other images lazy load with `loading="lazy"`
+   - Saves bandwidth and improves initial page load
 
-3. **Explicit Dimensions**
+4. **Explicit Dimensions**
    - All images have `width` and `height` attributes
    - Prevents layout shift (CLS) during page load
 
-4. **Recommended Image Sizes**
+5. **Recommended Image Sizes**
    - Cover image: Max 3000px width
    - Calendar images: Max 1224px width
    - Keep original aspect ratio

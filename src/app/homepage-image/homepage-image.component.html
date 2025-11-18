@@ -1,19 +1,35 @@
-<li class="row media" *ngIf="image">
-  <div class="column">
-    <picture>
-      <source [srcset]="getWebPSrc(image.src)" type="image/webp">
+<div (click)="openLightbox()" (keydown.enter)="openLightbox()" (keydown.space)="openLightbox()" *ngIf="image" class="calendar-item"
+     role="button" tabindex="0">
+  <div class="calendar-image-wrapper">
+    <!-- Low-quality placeholder (loads instantly) -->
+    <img
+      *ngIf="!imageLoaded"
+      [alt]="''"
+      [src]="getPlaceholderSrc(image.src)"
+      aria-hidden="true"
+      class="calendar-image calendar-placeholder"
+      height="1632"
+      width="1224"/>
+
+    <!-- High-quality image (loads progressively) -->
+    <picture [class.loaded]="imageLoaded">
+      <source
+        [srcset]="getWebPSrc(image.src)"
+        type="image/webp">
       <img
         [alt]="image.alt || 'Cobra Club Belgium kalender - ' + image.month"
-        class="row image img-fluid"
+        (load)="onImageLoad()"
+        [class.loaded]="imageLoaded"
         [src]="image.src"
         [attr.loading]="isLCP ? null : 'lazy'"
         [attr.fetchpriority]="isLCP ? 'high' : null"
+        class="calendar-image calendar-full"
         width="1224"
-        height="1632"
-        style="width: 100%; height: auto;"/>
+        height="1632"/>
     </picture>
-    <div class="row" style="color:white">
-      <h3>{{ image.month }}</h3>
+
+    <div class="calendar-month-label">
+      <span>{{ image.month }}</span>
     </div>
   </div>
-</li>
+</div>
