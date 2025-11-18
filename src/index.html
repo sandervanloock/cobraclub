@@ -52,10 +52,24 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="CCB">
 
-  <!-- Google Fonts - Montserrat for modern, clean typography -->
+  <!-- Preload critical hero image for faster LCP -->
+  <link as="image" fetchpriority="high" href="/assets/images/cover.webp" rel="preload" type="image/webp">
+  <link as="image" fetchpriority="high" href="/assets/images/cover.jpg" rel="preload">
+
+  <!-- Preconnect to external domains for faster resource loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="http://forum.cobraclub.nl" rel="dns-prefetch">
+
+  <!-- Google Fonts - Montserrat for modern, clean typography (non-blocking) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+    media="print" onload="this.media='all'" rel="stylesheet">
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet">
+  </noscript>
 </head>
 <body>
   <app-root></app-root>

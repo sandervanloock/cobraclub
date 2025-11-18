@@ -1,14 +1,56 @@
-.box{background:url('/assets/images/dot.png'); padding-bottom:7px}
-.box a.up{text-transform: uppercase; float: right; margin-right:12px}
-.box ul{list-style-type: none;}
-.box li h4 a{ color:#fff; text-decoration: none;}
-.box li h4 a:hover{ color:#efd125; }
-.box li .info{float: left; display: inline; }
+/* Statuten Page - Clean Document Style */
+.statuten-section {
+  background-color: var(--color-bg);
+  padding: var(--space-xxl) var(--space-lg);
+  min-height: 80vh;
+}
 
-.box h2{
-  max-width:903px;
-  width: 100%;
-  background:#eed025 url('/assets/images/h2-long.gif') no-repeat right 0;
-  margin-bottom:15px;
-  box-sizing: border-box;
+.section-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-container h2 {
+  font-size: var(--font-size-xxl);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-md);
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.statuten-content {
+  background-color: var(--color-bg-alt);
+  padding: var(--space-xl);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  line-height: 1.8;
+}
+
+.statuten-content br {
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .statuten-section {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .statuten-content {
+    padding: var(--space-md);
+  }
+
+  .section-container h2 {
+    font-size: var(--font-size-xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .statuten-section {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .statuten-content {
+    padding: var(--space-sm);
+  }
 }

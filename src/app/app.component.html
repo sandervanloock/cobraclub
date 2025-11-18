@@ -1,62 +1,50 @@
-<div class="shell">
+<!-- Header -->
+<header class="site-header">
+  <div class="header-container">
+    <h1 class="site-logo">
+      <a href="/" routerLink="">Cobra Club Belgium</a>
+    </h1>
 
-  <!-- Header -->
-  <header id="header">
+    <!-- Hamburger Menu Button -->
+    <button (click)="toggleMenu()"
+            [attr.aria-expanded]="menuOpen"
+            [class.active]="menuOpen"
+            aria-label="Toggle navigation menu"
+            class="hamburger-menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
 
-    <!-- Logo -->
-    <h1 id="logo"><a href="/">Cobra Club Belgium</a></h1>
-    <!-- End Logo -->
+    <!-- Mobile Menu Overlay -->
+    <div (click)="closeMenu()" [class.overlay-active]="menuOpen" class="menu-overlay"></div>
 
-    <!-- Navigation -->
-    <nav id="nav" aria-label="Main navigation">
+    <nav [class.nav-open]="menuOpen" aria-label="Main navigation" class="site-nav">
       <ul>
-        <li><a href="/" [routerLinkActiveOptions]="{ exact: true }" routerLink="" routerLinkActive="active">Home</a></li>
-        <li><a href="/club" [routerLinkActiveOptions]="{ exact: true }" routerLink="club" routerLinkActive="active">Club</a></li>
-        <li><a href="/statuten" [routerLinkActiveOptions]="{ exact: true }" routerLink="statuten" routerLinkActive="active">Statuten</a></li>
-        <li><a href="/lid" [routerLinkActiveOptions]="{ exact: true }" routerLink="lid" routerLinkActive="active">Lid worden</a></li>
-        <li><a href="/" routerLink="">Kalender</a></li>
-        <li><a href="http://forum.cobraclub.nl/index.php" target="_blank" rel="noopener noreferrer">Forum</a></li>
+        <li><a (click)="scrollToSection('hero'); closeMenu()">Home</a></li>
+        <li><a (click)="scrollToSection('calendar'); closeMenu()">Kalender</a></li>
+        <li><a (click)="scrollToSection('about'); closeMenu()">Club</a></li>
+        <li><a (click)="closeMenu()" href="/statuten" routerLink="statuten">Statuten</a></li>
+        <li><a (click)="scrollToSection('membership'); closeMenu()">Lid worden</a></li>
+        <li><a (click)="closeMenu()" href="http://forum.cobraclub.nl/index.php" rel="noopener noreferrer"
+               target="_blank">Forum</a></li>
       </ul>
     </nav>
-    <!-- End Navigation -->
-  </header>
-  <!-- End Header -->
-
-  <!-- Content -->
-  <div id="content container">
-
-    <!-- Main -->
-    <main id="main">
-      <!-- Top Image -->
-      <div class="row cover m-2">
-
-        <div class="image img-fluid mx-auto">
-          <picture>
-            <source srcset="/assets/images/cover.webp" type="image/webp">
-            <img width="3000" height="1500" style="width: 100%; height: auto;" alt="Cobra Club Belgium - AC Cobra and Shelby Cobra cars at club event" src="/assets/images/cover.jpg" fetchpriority="high">
-          </picture>
-        </div>
-
-      </div>
-
-      <!-- End Top Image -->
-
-      <router-outlet></router-outlet>
-
-      <!-- End Box -->
-    </main>
-
-    <!-- End Main -->
-    <div class="cl">&nbsp;</div>
-
   </div>
-  <!-- End Content -->
+</header>
 
-</div>
+<!-- Main Content -->
+<main class="site-main">
+  <router-outlet></router-outlet>
+</main>
 
-<footer style="text-align: center; padding: 20px 0; color: #b8b8b8; font-style: italic;">
-  Cobra deserves to be driven
+<!-- Footer -->
+<footer class="site-footer">
+  <p>Cobra deserves to be driven</p>
 </footer>
+
+<!-- Image Lightbox -->
+<app-image-lightbox></app-image-lightbox>
 
 
 

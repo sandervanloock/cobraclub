@@ -1,7 +1,115 @@
-<div class="box col">
-  <h2 class="row">Kalender 2025</h2>
+<!-- Hero Section -->
+<section class="hero-section" id="hero">
+  <div class="hero-image">
+    <!-- Tiny placeholder loads instantly -->
+    <img
+      *ngIf="!heroLoaded"
+      alt=""
+      aria-hidden="true"
+      class="hero-placeholder"
+      height="1500"
+      src="/assets/images/cover-placeholder.jpg"
+      width="3000">
 
-  <ul class="list-unstyled">
-    <app-homepage-image *ngFor="let image of images; let first = first" [image]="image" [isLCP]="first"></app-homepage-image>
-  </ul>
-</div>
+    <!-- Full resolution loads progressively -->
+    <picture>
+      <source srcset="/assets/images/cover.webp" type="image/webp">
+      <img
+        (load)="onHeroLoad()"
+        [class.loaded]="heroLoaded"
+        alt="Cobra Club Belgium - AC Cobra and Shelby Cobra cars at club event"
+        class="hero-full"
+        fetchpriority="high"
+        height="1500"
+        src="/assets/images/cover.jpg"
+        width="3000">
+    </picture>
+  </div>
+  <div class="hero-overlay">
+    <h2 class="hero-title">Cobra Club Belgium</h2>
+    <p class="hero-subtitle">Celebrating the legendary AC Cobra since 2001</p>
+  </div>
+</section>
+
+<!-- Calendar Section -->
+<section class="content-section calendar-section" id="calendar">
+  <div class="section-container">
+    <h2>Kalender 2025</h2>
+    <div class="calendar-grid">
+      <app-homepage-image
+        *ngFor="let image of images; let first = first; let i = index"
+        [allImages]="images"
+        [imageIndex]="i"
+        [image]="image"
+        [isLCP]="first"></app-homepage-image>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="content-section about-section" id="about">
+  <div class="section-container">
+    <h2>Over de Club</h2>
+    <div class="about-content">
+      <p>De COBRA CLUB BELGIUM werd opgericht op 1-01-2001 en is een feitelijke vereniging die tot
+        doel heeft de in BELGIE (en in NEDERLAND) wonende eigenaars en liefhebbers van voertuigen AC
+        COBRA en SHELBY COBRA met inbegrip van alle naar het voorbeeld van deze sportwagens gemaakte
+        replica's samen te brengen om in een sfeer van kameraadschappelijkheid recreatieve
+        activiteiten te ontplooien waarbij het rijwaardig houden, het gebruik en het onder de
+        publieke aandacht brengen van deze voertuigen centraal staan.</p>
+      <p>Onze club telt momenteel ruim dertig leden.</p>
+      <p>Wij geven maandelijks een 'NIEUWSFLASH' uit waarin onder andere de geplande activiteiten aan bod komen.</p>
+      <p>Op onze evenementen en rondritten zijn alle clubleden + 1 'invité(e)' (echtgenote, vriend/vriendin, partner...)
+        welkom, ook die leden die (nog) geen Cobra hebben.</p>
+      <p>Buiten diverse dag uitstappen/rondritten/samenkomsten organiseren we minimaal 1 meerdaagse uitstap per
+        jaar.</p>
+      <p><strong>Never a dull moment bij de Cobra Club Belgium. Nieuwe leden zijn van harte welkom.</strong></p>
+    </div>
+
+    <div class="board-info">
+      <h3>Bestuursleden 2025</h3>
+      <ul>
+        <li>Koen Andries</li>
+        <li>Chris Haesendonckx</li>
+        <li>Luc Branckaerts</li>
+      </ul>
+    </div>
+
+    <div class="contact-info">
+      <h3>Adres</h3>
+      <p>COBRA CLUB BELGIUM<br>
+        Ekelenhoek 25<br>
+        B-2860 Sint Katelijne Waver<br>
+        BELGIE</p>
+    </div>
+  </div>
+</section>
+
+<!-- Membership Section -->
+<section class="content-section membership-section" id="membership">
+  <div class="section-container">
+    <h2>Lid worden</h2>
+    <div class="membership-content">
+      <p>Dan meldt u zich aan op het e-mail adres van het bestuur van de Cobra Club Belgium</p>
+      <p class="email-highlight">
+        <a href="mailto:cobraclubbelgium2006@hotmail.com?SUBJECT=Lid worden">cobraclubbelgium2006&#64;hotmail.com</a>
+      </p>
+      <p>onder vermelding van uw persoonlijke gegevens: naam, voornaam, adres, e-mail adres, telefoon- en/of gsm-nummer,
+        geboortedatum.</p>
+
+      <div class="membership-details">
+        <h3>Lidgeld</h3>
+        <p class="price">€40 per jaar</p>
+        <p>Dit bedrag dient gestort te worden op rekening nummer</p>
+        <p><strong>IBAN:</strong> BE18 9731 3041 9665<br>
+          <strong>BIC:</strong> ARSPBE22</p>
+        <p>met als vermelding "lidgeld UwVoornaam UwNaam".</p>
+      </div>
+
+      <p>U krijgt een bevestiging van uw inschrijving via uw e-mail adres. Na ontvangst van uw lidgeld bent u lid van
+        onze club.</p>
+      <p><em>Om lid te worden van de CCB is het niet verplicht om een Cobra te bezitten.</em></p>
+      <p><strong>Tot ziens bij de Cobra Club Belgium.</strong></p>
+    </div>
+  </div>
+</section>

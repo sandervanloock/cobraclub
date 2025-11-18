@@ -10,6 +10,7 @@ import {Image} from "./Image";
 export class HomepageComponent implements OnInit {
 
   images: Image[];
+  heroLoaded = false;
 
   constructor() {
     this.images = [
@@ -70,6 +71,10 @@ export class HomepageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  onHeroLoad(): void {
+    this.heroLoaded = true;
   }
 
 }
