@@ -87,9 +87,10 @@ The project includes an automated image optimization script that converts images
 
 Add new images to the appropriate folder in `src/assets/images/`:
 ```bash
-# Example: Adding 2025 calendar images
-mkdir -p src/assets/images/2025
-# Copy your JPEG/PNG images to this folder
+# Example: Adding calendar images for a new year
+mkdir -p src/assets/images/2026
+# Copy your JPEG images to this folder
+# IMPORTANT: Rename files to just the number (1.jpg, 2.jpg, ... 12.jpg)
 ```
 
 #### 2. Run the Image Optimization Scripts
@@ -112,9 +113,19 @@ npm run optimize:images
 **What it does:**
 
 - Creates tiny (~400 bytes) blurred versions of each image
-- Saves to `src/assets/images/2025/placeholders/` and `src/assets/images/cover-placeholder.jpg`
+- Saves to `src/assets/images/<year>/placeholders/` and `src/assets/images/cover-placeholder.jpg`
 - Used for instant page load (progressive image loading)
 - Prevents blank space while full images load
+
+**Important requirements:**
+
+1. **File naming**: Calendar image files must be named with just the number and `.jpg` extension (e.g., `1.jpg`, `2.jpg`, ... `12.jpg`). The script filters for files matching this pattern and will skip files with other naming conventions.
+
+2. **Hardcoded year**: The script has the year hardcoded in `scripts/generate-placeholders.js`. When adding images for a new year, update the `INPUT_DIR` and `OUTPUT_DIR` paths at the top of the script:
+   ```javascript
+   const INPUT_DIR = path.join(__dirname, '../src/assets/images/2026');  // Update year here
+   const OUTPUT_DIR = path.join(__dirname, '../src/assets/images/2026/placeholders');  // And here
+   ```
 
 **Example output:**
 
@@ -157,14 +168,17 @@ If you're adding new calendar images, update `src/app/homepage/homepage.componen
 ```typescript
 this.images = [
   {
-    month: 'januari',
-    src: '/assets/images/2025/1-JANUARI.jpg'  // Keep .jpg extension
+    month: 'februari',
+    src: '/assets/images/2026/1.webp',
+    events: [
+      {date: 'Zondag 22 februari', title: 'Bezoek Abarth museum'}
+    ]
   },
   // Add more months...
 ]
 ```
 
-**Note:** Keep the `.jpg` extension in the code. The template automatically loads the WebP version with JPEG fallback using the `<picture>` element.
+**Note:** Use the `.webp` extension in the code. The template uses the `<picture>` element for browser compatibility.
 
 #### 4. Test Your Changes
 
