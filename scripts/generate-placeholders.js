@@ -9,8 +9,8 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-const INPUT_DIR = path.join(__dirname, '../src/assets/images/2025');
-const OUTPUT_DIR = path.join(__dirname, '../src/assets/images/2025/placeholders');
+const INPUT_DIR = path.join(__dirname, '../src/assets/images/2026');
+const OUTPUT_DIR = path.join(__dirname, '../src/assets/images/2026/placeholders');
 
 // Ensure output directory exists
 if (!fs.existsSync(OUTPUT_DIR)) {
