@@ -29,7 +29,7 @@ export class HomepageImageComponent implements OnInit {
   getPlaceholderSrc(src: string): string {
     // Extract filename and create placeholder path
     const filename = src.split('/').pop()?.replace(/\.(jpg|jpeg|png)$/i, '');
-    return `/assets/images/2026/placeholders/${filename}.jpg`;
+    return `/assets/images/2026/placeholders/${filename}`;
   }
 
   onImageLoad(): void {
