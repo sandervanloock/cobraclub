@@ -16,15 +16,26 @@ export class HomepageComponent implements OnInit {
     this.images = [
       {
         month: 'februari',
-        src: '/assets/images/2026/1.webp'
+        src: '/assets/images/2026/1.webp',
+        events: [
+          {date: 'Zondag 22 februari', title: 'Bezoek Abarth museum'}
+        ]
       },
       {
         month: 'maart',
-        src: '/assets/images/2026/2.webp'
+        src: '/assets/images/2026/2.webp',
+        events: [
+          {date: 'Zaterdag 7 maart', title: 'Afternoon Cruise'},
+          {date: 'Zondag 22 maart', title: 'Pallieterrally Lier'}
+        ]
       },
       {
         month: 'april',
-        src: '/assets/images/2026/3.webp'
+        src: '/assets/images/2026/3.webp',
+        events: [
+          {date: 'Zondag 19 april', title: 'Openingsrit'},
+          {date: '24-25-26 april', title: 'Spa Summer Classic'}
+        ]
       },
       {
         month: 'mei',
@@ -32,11 +43,18 @@ export class HomepageComponent implements OnInit {
       },
       {
         month: 'juni',
-        src: '/assets/images/2026/5.webp'
+        src: '/assets/images/2026/5.webp',
+        events: [
+          {date: 'Zaterdag 13 juni', title: 'Classic Wings & Wheels Gilzerijen'}
+        ]
       },
       {
         month: 'juli',
-        src: '/assets/images/2026/6.webp'
+        src: '/assets/images/2026/6.webp',
+        events: [
+          {date: 'Zondag 5 juli', title: 'Mustang Meeting'},
+          {date: 'Zondag 12 juli', title: 'Brabantrit NL nr 8'}
+        ]
       },
       {
         month: 'augustus',
@@ -44,7 +62,11 @@ export class HomepageComponent implements OnInit {
       },
       {
         month: 'september',
-        src: '/assets/images/2026/8.webp'
+        src: '/assets/images/2026/8.webp',
+        events: [
+          {date: '4-5-6 september', title: 'Weekend CCB'},
+          {date: '25-26-27 september', title: '6 uren Spa Francorchamps'}
+        ]
       },
       {
         month: 'oktober',

@@ -65,13 +65,38 @@
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
   padding: var(--space-xl) var(--space-md) var(--space-md);
   color: white;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
 }
 
-.calendar-month-label span {
+.month-name {
   font-size: var(--font-size-lg);
   font-weight: 600;
   text-transform: capitalize;
   letter-spacing: 0.5px;
+}
+
+.card-events {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-event {
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+  opacity: 0.9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.card-event::before {
+  content: ">";
+  margin-right: 6px;
+  opacity: 0.7;
 }
 
 /* Responsive */
@@ -84,8 +109,12 @@
     padding: var(--space-lg) var(--space-sm) var(--space-sm);
   }
 
-  .calendar-month-label span {
+  .month-name {
     font-size: var(--font-size-base);
+  }
+
+  .card-event {
+    font-size: var(--font-size-xs);
   }
 }
 

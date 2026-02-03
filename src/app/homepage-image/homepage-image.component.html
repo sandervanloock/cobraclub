@@ -29,7 +29,12 @@
     </picture>
 
     <div class="calendar-month-label">
-      <span>{{ image.month }}</span>
+      <span class="month-name">{{ image.month }}</span>
+      <div *ngIf="image.events?.length" class="card-events">
+        <div *ngFor="let event of image.events" class="card-event">
+          {{ event.title }}
+        </div>
+      </div>
     </div>
   </div>
 </div>

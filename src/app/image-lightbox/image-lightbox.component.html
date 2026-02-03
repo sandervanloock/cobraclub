@@ -21,6 +21,12 @@
           <div class="lightbox-caption">
             {{ image.month }}
           </div>
+          <div *ngIf="image.events?.length" class="lightbox-events">
+            <div *ngFor="let event of image.events" class="event-item">
+              <span class="event-date">{{ event.date }}</span>
+              <span class="event-title">{{ event.title }}</span>
+            </div>
+          </div>
         </div>
       </div>
 
